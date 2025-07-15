@@ -36,7 +36,7 @@ import Sidebar from './components/SideBar.vue'
             flex:1;
           "
         >
-          <router-view />
+          <router-view :key="$route.fullPath" />
         </div>
       </div>
     </div>

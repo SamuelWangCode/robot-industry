@@ -233,7 +233,7 @@ const comment = computed(() => DATA[current.value].comment)
 
 <style scoped>
 .page  { padding: 12px 24px 24px; }
-.intro { font-size: 15px; line-height: 26px; }
+.intro { font-size: 22px; line-height: auto; }
 .note {
   font-size: 16px;
   color: #666;

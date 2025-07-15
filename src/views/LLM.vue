@@ -69,7 +69,7 @@ async function ask () {
 <style scoped>
 .container  { padding: 12px 24px 24px; }
 .chat-box   { display:flex; flex-direction:column; height:100%; }
-.answer     { flex:1; padding:16px 24px 24px; overflow-y:auto;line-height:1.7;white-space:normal; }
+.answer     { flex:1; padding:16px 24px 24px; overflow-y:auto;line-height:auto;white-space:normal; }
 .answer ul{ padding-left:1.4em; }
 .answer li{ margin:4px 0; }
 .input-area { display:flex; gap:8px; margin-top:12px; }

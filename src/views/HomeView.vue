@@ -108,6 +108,7 @@ const cards = [
   border-radius: 8px;
   transition: all .25s;
   padding: 32px 18px 26px;
+  margin-bottom: 15px;
 }
 .card:hover {
   transform: translateY(-4px);

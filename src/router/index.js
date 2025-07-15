@@ -20,17 +20,17 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/densityindustry',
+      path: '/density-industry',
       name: 'densityindustry',
       component: DensityIndustry,
     },
     {
-      path: '/densityyear',
+      path: '/density-year',
       name: 'densityyear',
       component: DensityYear,
     },
     {
-      path: '/densityindustryyear',
+      path: '/density-industry-year',
       name: 'densityindustryyear',
       component: DensityIndustryYear,
     },
@@ -45,12 +45,12 @@ const router = createRouter({
       component: Salary,
     },
     {
-      path: '/AIindustry',
+      path: '/AI-industry',
       name: 'AIindustry',
       component: AIIndustry,
     },
     {
-      path: '/AIemployment',
+      path: '/AI-employment',
       name: 'AIemployment',
       component: AIEmployment,
     },

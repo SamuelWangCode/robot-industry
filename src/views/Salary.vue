@@ -19,6 +19,9 @@
           注：机器人对员工薪酬的影响是指机器人数量每增加1%，导致员工薪酬变化的百分比
         </div>
         </Card>
+        <div class="zhu">
+          注：由于样本容量有限、企业填报偏差、行业周期性滞后反应、疫情影响未完全反应或模型误差，部分年份的推论结果可能存在不稳定性，应结合整体趋势谨慎解读。
+        </div>
         <!-- 注释 -->
       </Col>
 
@@ -163,11 +166,17 @@ const comment = computed(() => DATA[year.value].c)
 
 <style scoped>
 .page  { padding: 12px 24px 24px; }
-.intro{ font-size: 15px; line-height: 26px; }
+.intro{ font-size: 22px; line-height: auto; }
 .note {
   font-size: 16px;
   color: #666;
   margin-top: 8px;   /* 与 Card 保持 8px 间距 */
   margin-left: 10%;
+}
+.zhu {
+  font-size: 12px;
+  color: #555555;
+  margin-top: 8px;   /* 与 Card 保持 8px 间距 */
+  margin-left: 0;
 }
 </style>

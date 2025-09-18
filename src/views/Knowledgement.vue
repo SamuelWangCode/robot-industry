@@ -129,13 +129,13 @@ const RAW = {
           examples:'风控模型、销售预测、疾病预测系统',
           collapsed: true,
           children: [
-            { name:'金融', collapsed:true,
+            { name:'金融预测', collapsed:true,
               children:[ { name:'风控岗', effect:'中强替代（可辅助识别潜在风险，提高决策准确性，但最终把关仍需人判断）' } ] },
-            { name:'零售', collapsed:true,
+            { name:'零售预测', collapsed:true,
               children:[ { name:'市场预测岗', effect:'中强替代（在数据充分的条件下，模型预测优于人工直觉）' } ] },
-            { name:'医疗', collapsed:true,
+            { name:'医疗分析', collapsed:true,
               children:[ { name:'临床分析岗', effect:'中弱替代（可提供参考建议，但临床判断须由医生做出）' } ] },
-            { name:'物流', collapsed:true,
+            { name:'物流分析', collapsed:true,
               children:[ { name:'调度预测岗', effect:'中强替代（预测能力可优化路径与效率，减少人为误差）' } ] }
           ]
         },
@@ -150,9 +150,9 @@ const RAW = {
               children:[ { name:'商品策划岗',   effect:'中强替代（推荐系统能精准分析用户偏好，辅助决策）' } ] },
             { name:'媒体',  collapsed:true,
               children:[ { name:'内容运营',   effect:'中强替代（内容推荐系统可大幅提升用户粘性和效率）' } ] },
-            { name:'广告',  collapsed:true,
+            { name:'广告推荐',  collapsed:true,
               children:[ { name:'投放优化',   effect:'强替代（广告系统高度自动化，智能匹配能力已成熟）' } ] },
-            { name:'教育',  collapsed:true,
+            { name:'教育推荐',  collapsed:true,
               children:[ { name:'个性化学习推荐', effect:'中弱替代（可辅助个性化学习，但教育内容仍需人工设计）' } ] }
           ]
         }

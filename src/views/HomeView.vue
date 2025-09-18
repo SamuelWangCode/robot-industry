@@ -29,7 +29,7 @@ const cards = [
   {
     title: '机器人密度趋势',
     desc : '按行业 / 年度查看密度变化',
-    path : '/densityindustry',
+    path : '/density-industry',
     icon : 'md-stats'
   },
   {
@@ -47,13 +47,13 @@ const cards = [
   {
     title: 'AI 就业监测年度报告',
     desc : '一键下载最新 PDF',
-    path : '/report',
+    path : '/AI-employment',
     icon : 'ios-document'
   },
   {
     title: '行业知识图谱',
     desc : '交互式关系可视化',
-    path : '/knowledge',
+    path : '/knowledgement',
     icon : 'md-git-branch'
   },
   {

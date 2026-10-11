@@ -73,8 +73,6 @@ curl https://www.sh-ai-trend.com/robot-industry/api/health
 
 后端固定原专业提示词、模型、2048 输出 token 上限和 temperature=0.6。每个地址每分钟最多 10 次问答，全局最多 4 个并发请求；单个问题最多 4000 字符。只允许配置中的浏览器来源，但公共网站不提供用户认证，来源检查不能替代认证；限流用于控制公开接口的资源消耗。
 
-## 密钥与回滚
-
-旧版将 DeepSeek 密钥放在公开 JavaScript 中。升级后密钥仅存在服务器环境配置中，但历史泄露的旧密钥仍应在 DeepSeek 后台撤销并换新，再更新 `/etc/robot-industry/api.env` 并重启 API。备份不得复制进公开静态目录。
+## 回滚
 
 更换 release 时先切换 `current`，重启 API 并检查 health，再原子切换静态站软链接。前一次版本及 Nginx 配置应一直保留；初次升级的原始站点位于发布前备份中。证书由 certbot 定时续期，成功后执行 Nginx reload。

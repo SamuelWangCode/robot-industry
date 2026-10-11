@@ -37,6 +37,8 @@
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
 import * as echarts from 'echarts/core'
+import 'echarts/theme/v5'
+import { useEchartResize } from '@/utils/useEchartResize'
 import { BarChart } from 'echarts/charts'
 import { TooltipComponent, LegendComponent, GridComponent } from 'echarts/components'
 import { CanvasRenderer } from 'echarts/renderers'
@@ -130,8 +132,10 @@ const year = ref('2019')
 const chartBox = ref(null)
 let chart
 
+useEchartResize(() => chart, chartBox)
 /* ---------- 渲染 ---------- */
 function render () {
+  if (!chart || chart.isDisposed()) return
   const { s } = DATA[year.value]
 
   const series = INDUSTRIES.filter(i => s[i]).map((ind, idx) => ({
@@ -172,7 +176,7 @@ function render () {
 watch(year, render)
 
 onMounted(() => {
-  chart = echarts.init(chartBox.value)
+  chart = echarts.init(chartBox.value, 'v5')
   render()
 })
 

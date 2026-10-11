@@ -11,6 +11,8 @@
 /* ------------ 基础引入 ------------ */
 import { ref, nextTick, onMounted, onBeforeUnmount } from 'vue'
 import * as echarts from 'echarts/core'
+import 'echarts/theme/v5'
+import { useEchartResize } from '@/utils/useEchartResize'
 import { TreeChart }        from 'echarts/charts'
 import { TooltipComponent } from 'echarts/components'
 import { CanvasRenderer }   from 'echarts/renderers'
@@ -296,7 +298,9 @@ function buildTree(clicked) {
 /* ------------ ECharts 实例 ------------ */
 const box   = ref(null)
 let   chart = null
-let   currentNode = null       // 记录当前展开的节点
+useEchartResize(() => chart, box)
+let initFrame
+let disposed = false
 
 function draw (tree) {
   if (!chart) return
@@ -336,14 +340,14 @@ function draw (tree) {
 
 /* ------------ 尝试安全初始化 ------------ */
 function safeInit () {
-  if (chart) return            // 已有实例
+  if (chart || disposed) return
   const dom = box.value
   if (!dom) return
   if (!dom.clientWidth || !dom.clientHeight) {
-    requestAnimationFrame(safeInit)     // 下一帧再测
+    initFrame = requestAnimationFrame(safeInit)     // 下一帧再测
     return
   }
-  chart = echarts.init(dom)
+  chart = echarts.init(dom, 'v5')
   chart.on('click', onClick)
   draw(buildTree(null))
 }
@@ -363,14 +367,14 @@ onMounted(() => {
   nextTick(safeInit)
 })
 onBeforeUnmount(() => {
-  chart?.off('click', onClick)
-  chart?.dispose()
+  disposed = true
+  cancelAnimationFrame(initFrame)
+  // The shared chart hook owns disposal and removes chart event handlers.
   chart = null
 })
 
 /* ------------ 顶层按钮 ------------ */
 function reset () {
-  currentNode = null
   collapse(RAW)                // 折叠所有
   draw(buildTree(null))
 }

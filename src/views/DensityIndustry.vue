@@ -31,6 +31,8 @@
 <script setup>
 import { ref, watch, onMounted, computed } from 'vue'
 import * as echarts from 'echarts/core'
+import 'echarts/theme/v5'
+import { useEchartResize } from '@/utils/useEchartResize'
 import {
   BarChart, LineChart
 } from 'echarts/charts'
@@ -107,8 +109,10 @@ const current = ref(industryList[0])
 const chartBox = ref(null)
 let chart
 
+useEchartResize(() => chart, chartBox)
 /* =========  渲染函数  ========= */
 function render() {
+  if (!chart || chart.isDisposed()) return
   const { density, growth } = DATA[current.value]
     const maxDensityRaw = Math.max(...density)
     const y1Max = Math.ceil(maxDensityRaw / 50) * 50
@@ -177,7 +181,7 @@ const comment = computed(() => DATA[current.value].comment)
 /* =========  生命周期  ========= */
 watch(current, render)
 onMounted(() => {
-  chart = echarts.init(chartBox.value)
+  chart = echarts.init(chartBox.value, 'v5')
   render()
 })
 </script>

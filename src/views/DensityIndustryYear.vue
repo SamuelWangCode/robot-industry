@@ -40,6 +40,8 @@
 <script setup>
 import { ref, watch, computed, onMounted } from 'vue'
 import * as echarts from 'echarts/core'
+import 'echarts/theme/v5'
+import { useEchartResize } from '@/utils/useEchartResize'
 import { BarChart, LineChart } from 'echarts/charts'
 import { TooltipComponent, LegendComponent, GridComponent } from 'echarts/components'
 import { CanvasRenderer } from 'echarts/renderers'
@@ -81,6 +83,7 @@ const y2=ref('2019')
 const chartBox=ref(null)
 let chart
 
+useEchartResize(() => chart, chartBox)
 /* ------- 强制顺序 & 互斥 ------- */
 function ensureOrder(changed){
   // 保证 y1 ≠ y2
@@ -118,11 +121,14 @@ function buildOption(){
     ]
   }
 }
-function render(){ chart.setOption(buildOption(),true) }
+function render(){
+  if (!chart || chart.isDisposed()) return
+  chart.setOption(buildOption(),true)
+}
 watch([y1,y2],render)
 
 onMounted(()=>{
-  chart=echarts.init(chartBox.value)
+  chart=echarts.init(chartBox.value, 'v5')
   render()
 })
 

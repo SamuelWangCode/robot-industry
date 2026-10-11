@@ -1,0 +1,90 @@
+{
+  "src/views/AIEmployment.vue": {
+    "template": "1372a5de253593d7a8e82263a4a7676e0402d38d584d127ff19662c155f77ef8",
+    "declarations": {
+      "years": "18f19bf23a0a15255ae53703e874b0f08a0078a04bdc9a688421e85ef8955afb"
+    }
+  },
+  "src/views/DensityIndustry.vue": {
+    "template": "d43c65de8d48e30f734400caebd5bd6b6cd67071f7db26d2c06108036eda5bcc",
+    "declarations": {
+      "years": "013e84d7448d1c8f601b8ad17eb81d5ab725c2529a04cc86abd81f610fc09517",
+      "DATA": "a65505178b14b5adbeab079f08f601284b29ede67a16bb11cce985aa98efae92"
+    }
+  },
+  "src/views/DensityIndustryYear.vue": {
+    "template": "628f1e027fac27b21b177a83e79f17f878ebbf2df7477d3d274b9291bb49ab19",
+    "declarations": {
+      "INDUSTRIES": "f170be54edb7fd6fdd1c323e7081289dd8c708dffa915a1f4e668486c525e154",
+      "RAW": "d9abfb7a469e3284d6252d15c03b2b66654bb202b1121e97d97daddecd437a4b",
+      "EXPLAINS": "447b75d58f10f263daea651111be8c5741175f6315fec2d493c9ebbe08d9032d"
+    }
+  },
+  "src/views/DensityYear.vue": {
+    "template": "49bf77afb7e97332c9bd524522f9804eb0070d0713c68b10a88de41f65b4af94",
+    "declarations": {
+      "DATA": "28d7f4df53cb8746c00c018c46f517ef69f0ebf755b38aea31a9c6c199fd3492"
+    }
+  },
+  "src/views/HomeView.vue": {
+    "template": "acd7ee0537ed6a7d3d518b8f4dc5c9e22bf69eca7e405b71ff6f447ea0bc679a",
+    "declarations": {
+      "cards": "2207d2e7c8ca6ee75f3204d9900233a076863256838acd98aa1ee0a2d4483827"
+    }
+  },
+  "src/views/Knowledgement.vue": {
+    "template": "7f6547af3be9d6877c23060f1bf6b89e54d53b4c5a850408536f06c074221188",
+    "declarations": {
+      "RAW": "5f2b84a2cc7e7ebeba8fbcfb2644da808bc7f13e957e2e103b3590d50aedf06f"
+    }
+  },
+  "src/views/LLM.vue": {
+    "template": null,
+    "declarations": {
+      "SYSTEM_PROMPT": "08b5aa96ba519fdbe579ca450304eeba511be4c552188f8a5fbcedf0686ac465"
+    }
+  },
+  "src/views/Replacement.vue": {
+    "template": "b07f436528e2cda34d82a7c186a741fc55e66e570cd25ffd868c55ff71c0a723",
+    "declarations": {
+      "LEVELS": "c230117ce903a618f6aa6c650f651f835ba8623d24a07c3e8f7d959ab4ddd517",
+      "INDUSTRIES": "29d81d2ebaf6da94824512137580e4d17f0e02ce7f2eae51b06e01ec74a0f02d",
+      "COLORS": "f90b9ee13ba7659e9adf9ae09b2a23fcc7d1653e2f3ff3e3dbd63b97b7d066aa",
+      "DATA": "d3ee007fcbf603258d714e0a9004860a3b8db228b8e70b1bad28cdf92ab8b7ea"
+    }
+  },
+  "src/views/Salary.vue": {
+    "template": "c98f783fe98ac2687a6ba55b0591726a3fe28142dfa6f01b9830039759101ac7",
+    "declarations": {
+      "LEVELS": "725d9b2fa047f30662d46dfd17af2292c27a01ae72f2e5effa3570adc5cb8d6d",
+      "INDUSTRIES": "1a096da94f91e30fdb7e7a715fa690c086fdf63cfc523f52daaa4634c337fafb",
+      "COLOR_MANAGE": "a81e6fdfbb7ad6e0d4555982de1da099d2c340b89896aec217d299b7d2c23bee",
+      "COLOR_STAFF": "af8f29b00d1e5474d4f78411244ef6a95e920c578c68f83ba5daccb3105abb81",
+      "DATA": "eae4af2d3d066b32fbc10549705894d4999a060d798177477f9535e1e8d0b22e"
+    }
+  },
+  "src/assets/ShanghaiRobot.xlsx": {
+    "file": "2dd23f2fa29e4b921a9a361187e84af4b6a29c839919894929807e6c204f7ed7"
+  },
+  "public/reports/2018.pdf": {
+    "file": "66bbf542d28b1cdb40d3f9e4cd80fff0aa2a9e336554b96ee610f77e3fd4ebf7"
+  },
+  "public/reports/2019.pdf": {
+    "file": "fd837a45407b7c33c009dd028dbacddbe238d7436863a9f4501ea1ce8d5a01bc"
+  },
+  "public/reports/2020.pdf": {
+    "file": "9a00cb5810062017dc8f6e14d3a5ba5654fd3379b0f488ee52076f714b440a93"
+  },
+  "public/reports/2021.pdf": {
+    "file": "ba43380a840aca5efd1c7b58bd0b11c548bbab921bb91e9a731b6433d2946705"
+  },
+  "public/reports/2022.pdf": {
+    "file": "81be42dd1b580248b55310f2a4e3ddcb3d65cb0a17ca91246d12eba93c02961c"
+  },
+  "public/reports/2023.pdf": {
+    "file": "23a4cf345042b2820a71779f4cff4563952ba2687de77f77151187d41c2004a0"
+  },
+  "public/reports/2024.pdf": {
+    "file": "e817b1f4da40a66bb930452c3e04a84c966bbc708bacbdc48e723814c181bb5c"
+  }
+}

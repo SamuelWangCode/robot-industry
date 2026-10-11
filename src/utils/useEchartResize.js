@@ -1,25 +1,28 @@
 import { onMounted, onBeforeUnmount } from 'vue'
 
-export function useEchartResize(chartRef, domRef) {
-  let ro
-
-  const doResize = () => {
-    if (chartRef.value) chartRef.value.resize()
+export function useEchartResize(getChart, domRef) {
+  let observer
+  let frame
+  const resize = () => {
+    cancelAnimationFrame(frame)
+    frame = requestAnimationFrame(() => {
+      const chart = getChart()
+      if (chart && !chart.isDisposed()) chart.resize()
+    })
   }
 
   onMounted(() => {
-    // 1) window 尺寸变化
-    window.addEventListener('resize', doResize)
-
-    // 2) 观察容器自身尺寸
-    if ('ResizeObserver' in window) {
-      ro = new ResizeObserver(doResize)
-      ro.observe(domRef.value)
+    window.addEventListener('resize', resize)
+    if (window.ResizeObserver && domRef.value) {
+      observer = new ResizeObserver(resize)
+      observer.observe(domRef.value)
     }
   })
 
   onBeforeUnmount(() => {
-    window.removeEventListener('resize', doResize)
-    ro && ro.disconnect()
+    window.removeEventListener('resize', resize)
+    observer?.disconnect()
+    cancelAnimationFrame(frame)
+    getChart()?.dispose()
   })
 }

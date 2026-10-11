@@ -31,6 +31,8 @@
 <script setup>
 import { ref, watch, onMounted, computed } from 'vue'
 import * as echarts from 'echarts/core'
+import 'echarts/theme/v5'
+import { useEchartResize } from '@/utils/useEchartResize'
 import {
   BarChart
 } from 'echarts/charts'
@@ -164,8 +166,10 @@ const current = ref(yearList[0])  // 默认 2018
 const chartBox = ref(null)
 let chart
 
+useEchartResize(() => chart, chartBox)
 /* ===========  图表绘制  =========== */
 function render() {
+  if (!chart || chart.isDisposed()) return
   const ORDER = [
     '制造业总计',
     '电气机械和器材制造业',
@@ -223,7 +227,7 @@ function render() {
 watch(current, render)
 
 onMounted(() => {
-  chart = echarts.init(chartBox.value)
+  chart = echarts.init(chartBox.value, 'v5')
   render()
 })
 

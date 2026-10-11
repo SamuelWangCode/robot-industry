@@ -1,14 +1,14 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import DensityIndustry from '../views/DensityIndustry.vue'
-import DensityYear from '../views/DensityYear.vue'
-import DensityIndustryYear from '../views/DensityIndustryYear.vue'
-import Replacement from '../views/Replacement.vue'
-import Salary from '../views/Salary.vue'
-import AIIndustry from '../views/AIIndustry.vue'
-import AIEmployment from '../views/AIEmployment.vue'
-import Knowledgement from '../views/Knowledgement.vue'
-import LLM from '../views/LLM.vue'
+const HomeView = () => import('../views/HomeView.vue')
+const DensityIndustry = () => import('../views/DensityIndustry.vue')
+const DensityYear = () => import('../views/DensityYear.vue')
+const DensityIndustryYear = () => import('../views/DensityIndustryYear.vue')
+const Replacement = () => import('../views/Replacement.vue')
+const Salary = () => import('../views/Salary.vue')
+const AIIndustry = () => import('../views/AIIndustry.vue')
+const AIEmployment = () => import('../views/AIEmployment.vue')
+const Knowledgement = () => import('../views/Knowledgement.vue')
+const LLM = () => import('../views/LLM.vue')
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
